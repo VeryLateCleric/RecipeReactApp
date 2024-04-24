@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RecipeCreate() {
+function RecipeCreate( {onRecipeCreate} ) {
   const [formData, setFormData] = useState({
     name: "",
     cuisine: "",
@@ -9,13 +9,13 @@ function RecipeCreate() {
     preparation: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     onRecipeCreate(formData);
     setFormData({
       name: "",
@@ -33,7 +33,7 @@ function RecipeCreate() {
           <tr>
             <td>Name:</td>
             <td>
-              <input type="text" name="name" value={formData.name} />
+              <input type="text" name="name" value={formData.name} onChange={handleChange} />
             </td>
           </tr>
           <tr>
