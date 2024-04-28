@@ -13,6 +13,12 @@ header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 64px;
+  text-align: center;
+}
+
 /* typography */
 
 html {
@@ -21,11 +27,14 @@ html {
 
 thead th, tfoot th {
   font-family: 'Rock Salt';
+  letter-spacing: 2px;
+  padding: 10px;
 }
 
 th {
   letter-spacing: 2px;
   padding: 10px;
+  
 }
 
 td {
@@ -43,8 +52,13 @@ table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  overflow:hidden;
+  overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content_td {
+  max-width: 30%;
+  overflow: auto;
 }
 
 .content_td p {
@@ -54,7 +68,15 @@ table {
   text-overflow: ellipsis;
 }
 
+td img {
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+}
+
+/* Zebra stripe */
+tbody tr:nth-child(odd) {
+  background-color: #fff0c7;
+}
 /* Column Size for thead */
-
-
 /* Column size for tbody */
